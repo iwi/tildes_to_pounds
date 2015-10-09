@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 #
-# This script substitutes the nth tilde ("~") in each line starting with a "3"
-# of the input file with a pound symbol ("£").
+# For a given text file, this script substitutes the nth tilde ("~") in each
+# line starting with a "3" with a pound symbol ("£").
 #
 # Fix from Iu Garcia-Siches 2015-10-09
 
