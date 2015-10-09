@@ -8,13 +8,13 @@
 # Capturing the inputs
 puts "Enter the filename"
 filename = gets.chomp
-puts "Enter the Nth tilde:"
+puts "Enter the n for the n-th tilde that will be replaced:"
 nth_tilde = gets.chomp.to_i - 1
 puts "Do you want to create a new file? (Y/N) (Otherwise just lists occurences)"
 new_file = gets.chomp.upcase
 
 # Open the output file if needed
-fileOut = File.open("edited_" + filename, 'w') if new_file == 'Y'
+file_out = File.open("edited_" + filename, 'w') if new_file == "Y"
 
 # Iterate through the lines of the file and through the tildes of each line
 File.foreach(filename) do |line|
@@ -27,5 +27,5 @@ File.foreach(filename) do |line|
       end
     end
   end
-  fileOut.write(line) if new_file == 'Y'
+  file_out.write(line) if new_file == "Y"
 end
