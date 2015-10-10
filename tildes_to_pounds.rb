@@ -13,6 +13,7 @@
 # @param String to_str The string to replace captures with
 #
 # @return String
+
 def tr_nth(input, nth, from_str, to_str)
   input.gsub(/#{from_str}/).with_index { |char, i| i == nth ? to_str : char }
 end
@@ -32,7 +33,7 @@ input = File.open(filename, 'r')
 nth = ask("Enter the n for the n-th tilde that will be replaced:")
 nth = Integer(nth) - 1
 
-new_file = ask("Do you want to create a new file? (Y/N)")
+new_file = ask("Do you want to create a new file? (Y/N) Otherwise print to stdout")
 new_file = new_file.upcase == 'Y'
 
 output = input.readlines.map do |line|
