@@ -27,6 +27,9 @@ end
 
 
 # Capturing the inputs
+# Note: in its actual use the process crashed because of the encoding from the
+# input file which was CP850. The fix was to specify input and output encodings
+# File.open(filename, 'r:CP850:utf-8')
 filename = ask("Enter the filename")
 input = File.open(filename, 'r')
 
