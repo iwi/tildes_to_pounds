@@ -3,7 +3,7 @@
 # This process will parse the input file and execute two actions:
 # - It will change the nth tilde to a pound sign for lines starting with
 #   a 3 which have at least 21 tildes in total.
-# 
+#
 # - For lines starting with 7 if the number of original tildes is N it will
 #   substitute the 2nd to the N-2th with spaces.
 #
@@ -35,12 +35,19 @@ end
 #
 # @return String
 def tr_many(input, nth, from_str, to_str)
-  new_input = tr_nth(input, nth, from_str, to_str)   
-  if new_input.count(from_str) > 3
-    tr_many(new_input, nth, from_str, to_str)
-  else
-    new_input
-  end
+  new_input = tr_nth(input, nth, from_str, to_str)
+
+  return new_input if new_input.count(from_str) <= 3
+
+  tr_many(new_input, nth, from_str, to_str)
+end
+
+def tr_many(input, nth, from_str, to_str)
+          new_input = tr_nth(input, nth, from_str, to_str)
+
+            return new_input if new_input.count(from_str) < 3
+
+              tr_many(new_input, nth, from_str, to_str)
 end
 
 ##
