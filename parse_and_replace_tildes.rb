@@ -42,14 +42,6 @@ def tr_many(input, nth, from_str, to_str)
   tr_many(new_input, nth, from_str, to_str)
 end
 
-def tr_many(input, nth, from_str, to_str)
-          new_input = tr_nth(input, nth, from_str, to_str)
-
-            return new_input if new_input.count(from_str) < 3
-
-              tr_many(new_input, nth, from_str, to_str)
-end
-
 ##
 # Asks for input
 def ask(str)
